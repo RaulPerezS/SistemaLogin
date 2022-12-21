@@ -15,7 +15,6 @@ if (isset($_SESSION['rol'])) {
 		case 1:
 			header('location: Admin/inicioAdmin.php');
 			break;
-		default:
 	}
 }
 
@@ -35,32 +34,15 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 		LEFT JOIN `operaciones` ON `operaciones`.`usuario_idusuario` = `usuario`.`idusuario` where estado="Activo" AND usuario = :username AND Contraseña = :password;');
 	$query->execute(['username' => $username, 'password' => $password]);
 
-
-
-
 	$row = $query->fetch(PDO::FETCH_NUM);
-
 	if ($row == true) {
-		$user = $row[0];
 		$rol = $row[2];
-		$nomb = $row[3];
-		$iduser = $row[4];
-
-		
-		$_SESSION['iduser'] = $iduser;
-		$_SESSION['rol'] = $rol;
-		$_SESSION['nomb'] = $nomb;
-		$_SESSION['user'] = $user;
-		
-	
-
 		switch ($rol) {
 			case 1:
 				header('location: Admin/inicioAdmin.php');
 				break;
 
 
-			default:
 		}
 	} else {
 		// no existe el usuario

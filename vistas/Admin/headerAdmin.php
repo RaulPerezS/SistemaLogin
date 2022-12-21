@@ -1,4 +1,6 @@
-<?php require "../../config/conexion.php";?>
+<?php require "../../config/conexion.php";
+
+    ?>
 
 <!DOCTYPE html>
 <html lang="en">

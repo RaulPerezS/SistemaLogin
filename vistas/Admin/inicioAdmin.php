@@ -1,6 +1,6 @@
-<?php include('headerAdmin.php');?>
+<?php include('headerAdmin.php');
 
-
+    ?>
 
 
 
