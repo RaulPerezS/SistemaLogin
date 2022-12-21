@@ -1,7 +1,6 @@
 <?php include('headerAdmin.php');
-
 $conexion=conexion();
-$sql="CALL getUsuarios";
+$sql="CALL getUsuariosInactivos";
 $guardar=mysqli_query($conexion,$sql);
 ?>
 
@@ -31,9 +30,9 @@ $guardar=mysqli_query($conexion,$sql);
             <a href="modificar.php?idusuario=<?php echo $row['idusuario'];?>"
             <button type="button" class="btn btn-primary"  tittle="Editar Registro">Editar</button>
 
-            <a href="inc/eliminarusuario.php?idusuario=<?php echo $row['idusuario'];?>"  
-            <button type="button" class="btn btn-danger"  tittle="Borrar usuario"  onclick="return confirm(`¿Estás seguro que deseas eliminar el usuario? \n ¡Toda la informacion de este usuario se perdera!`)"; tittle="borrar Registro" > 
-            <i class="fa fa-trash red_color" ></i>borrar</a></button> 
+            <a href="inc/activarCuenta.php?idusuario=<?php echo $row['idusuario'];?>"  
+            <button type="button" class="btn btn-success"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;" tittle="Activar"  onclick="return confirm(`¿Estás seguro que deseas activar el usuario? `)"; tittle="Activar usuario" > 
+            <i class="fa fa-trash red_color" ></i>Activar</a></button> 
             </div>
 
     <td>
@@ -42,12 +41,6 @@ $guardar=mysqli_query($conexion,$sql);
     ?>
     </div>
 </table>
-
-
-
-
-
-
 
 
 </body>
