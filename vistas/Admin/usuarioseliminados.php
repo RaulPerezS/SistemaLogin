@@ -4,7 +4,7 @@ $sql="CALL getUsuariosInactivos";
 $guardar=mysqli_query($conexion,$sql);
 ?>
 
-<h1 style="text-align: center;">Crud usuarios</h1>
+<h1 style="text-align: center;">Usuarios eliminados</h1>
 <table class="table table-hover">
   <thead>
   <th scope = 'row'>#</th>
