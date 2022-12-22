@@ -25,6 +25,7 @@ DELIMITER $$
 --
 -- Procedimientos
 --
+<<<<<<< HEAD
 CREATE DEFINER=`root`@`localhost` PROCEDURE `buscarUsuarioespecifico` (IN `id` INT)   SELECT `usuario`.*, `operaciones`.*, `cargo`.*, CONCAT(nombre, ' ', apellidop,' ', apellidom)  nombre_completo
 FROM `usuario` 
 	LEFT JOIN `operaciones` ON `operaciones`.`usuario_idusuario` = `usuario`.`idusuario` 
@@ -44,6 +45,27 @@ FROM `usuario`
 	LEFT JOIN `operaciones` ON `operaciones`.`usuario_idusuario` = `usuario`.`idusuario` 
 	LEFT JOIN `cargo` ON `operaciones`.`cargo_idcargo` = `cargo`.`idcargo`WHERE estado="Inactivo";
 
+=======
+CREATE DEFINER=`root`@`localhost` PROCEDURE `buscarUsuarioespecifico` (IN `id` INT)   SELECT `usuario`.*, `operaciones`.*, `cargo`.*, CONCAT(nombre, ' ', apellidop,' ', apellidom)  nombre_completo
+FROM `usuario` 
+	LEFT JOIN `operaciones` ON `operaciones`.`usuario_idusuario` = `usuario`.`idusuario` 
+	LEFT JOIN `cargo` ON `operaciones`.`cargo_idcargo` = `cargo`.`idcargo`WHERE estado="Activo" AND idusuario= id$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `getUsuarios` ()   BEGIN
+SELECT `usuario`.*, `operaciones`.*, `cargo`.*,CONCAT(nombre, ' ', apellidop,' ', apellidom)  nombre_completo
+FROM `usuario` 
+	LEFT JOIN `operaciones` ON `operaciones`.`usuario_idusuario` = `usuario`.`idusuario` 
+	LEFT JOIN `cargo` ON `operaciones`.`cargo_idcargo` = `cargo`.`idcargo`WHERE estado="Activo";
+
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `getUsuariosInactivos` ()   BEGIN
+SELECT `usuario`.*, `operaciones`.*, `cargo`.*,CONCAT(nombre, ' ', apellidop,' ', apellidom)  nombre_completo
+FROM `usuario` 
+	LEFT JOIN `operaciones` ON `operaciones`.`usuario_idusuario` = `usuario`.`idusuario` 
+	LEFT JOIN `cargo` ON `operaciones`.`cargo_idcargo` = `cargo`.`idcargo`WHERE estado="Inactivo";
+
+>>>>>>> ac8592ae41ebe564a48a1d4fa9861545757e222e
 END$$
 
 DELIMITER ;
