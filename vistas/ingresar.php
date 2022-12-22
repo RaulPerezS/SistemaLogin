@@ -61,6 +61,24 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
 
 ?>
+<link rel="stylesheet" href="<?= SERVERURL?>vistas/css/style.css" />
+<body class="inner_page login">
+	
+	<div class="full_container">
+		
+		<div class="container">
+			
+			<div class="center verticle_center full_height">
+			
+				<div class="login_section">
+			
+					<div class="logo_login">
+						
+						<div class="center">
+							<img width="150" src="<?= SERVERURL?>vistas/img/transporte.png" alt="#" />
+						</div>
+					</div>
+					<div class="login_form">
 						<form action="#" method="POST">
 							<div class="mb-3">
 								<label class="form-label">Usuario</label>
@@ -86,8 +104,11 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 								<a href="<?=SERVERURL?>" style="color:blue">Volver al Inicio</a>
 							</div>
 						</form>
-
-
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 
 

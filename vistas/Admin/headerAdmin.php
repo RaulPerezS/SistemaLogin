@@ -37,6 +37,7 @@
         <li class="nav-item">
           <a class="nav-link" href="usuarioseliminados.php">Usuarios eliminados</a>
         </li>
+
         <li class="nav-item">
           <a class="nav-link" href="../inc/cerrar_sesion.php">Cerrar sesion</a>
         </li>
@@ -46,3 +47,5 @@
 </nav>
 
 <!-- end  navbar    -->
+
+
